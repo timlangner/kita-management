@@ -36,6 +36,7 @@
   },
   "devDependencies": {
     "@material-ui/icons": "^4.9.1",
-    "@material-ui/pickers": "^3.2.10"
+    "@material-ui/pickers": "^3.2.10",
+    "clsx": "^1.1.1"
   }
 }
