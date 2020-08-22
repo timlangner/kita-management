@@ -10,29 +10,13 @@ import DateFnsUtils from "@date-io/date-fns";
 import Grid from "@material-ui/core/Grid";
 import Button from "@material-ui/core/Button";
 import Accordion from "@material-ui/core/Accordion";
-import {makeStyles} from "@material-ui/core/styles";
 import MenuItem from "@material-ui/core/MenuItem";
 import FormControl from "@material-ui/core/FormControl";
 import Select from "@material-ui/core/Select";
 import useTheme from "@material-ui/core/styles/useTheme";
 import InputLabel from "@material-ui/core/InputLabel";
-
-const useStyles = makeStyles((theme) => ({
-    root: {
-        width: '100%',
-    },
-    heading: {
-        fontSize: theme.typography.pxToRem(15),
-        fontWeight: theme.typography.fontWeightRegular,
-    },
-    formControl: {
-        margin: theme.spacing(2),
-        minWidth: 120,
-    },
-    selectEmpty: {
-        marginTop: theme.spacing(2),
-    },
-}));
+import AddIcon from '@material-ui/icons/Add';
+import { useStyles } from "../../../utils/useStyles";
 
 const ITEM_HEIGHT = 48;
 const ITEM_PADDING_TOP = 8;
@@ -79,7 +63,7 @@ export default function AddChild() {
     return (
         <Accordion>
             <AccordionSummary
-                expandIcon={<ExpandMoreIcon />}
+                expandIcon={<AddIcon />}
                 aria-controls="panel1a-content"
                 id="panel1a-header"
             >
@@ -131,7 +115,7 @@ export default function AddChild() {
 
                     <div style={{ textAlign: 'center'}}>
                         <Button style={{ marginTop: '20px' }} variant="contained" color="primary">
-                            Hinzufügen
+                            Speichern
                         </Button>
                     </div>
                 </form>

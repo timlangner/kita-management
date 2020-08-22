@@ -8,9 +8,6 @@ export default function Administration() {
     return (
         <div style={{ margin: '15px' }}>
             <div>
-                <Typography variant={'h4'} gutterBottom>
-                    Verwaltung
-                </Typography>
                 <AddChild />
             </div>
             <Groups />
