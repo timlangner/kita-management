@@ -1,7 +1,6 @@
 import 'date-fns';
 import React, {useState} from 'react';
 import AccordionSummary from "@material-ui/core/AccordionSummary";
-import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import Typography from "@material-ui/core/Typography";
 import AccordionDetails from "@material-ui/core/AccordionDetails";
 import TextField from "@material-ui/core/TextField";
@@ -10,33 +9,8 @@ import DateFnsUtils from "@date-io/date-fns";
 import Grid from "@material-ui/core/Grid";
 import Button from "@material-ui/core/Button";
 import Accordion from "@material-ui/core/Accordion";
-import MenuItem from "@material-ui/core/MenuItem";
-import FormControl from "@material-ui/core/FormControl";
-import Select from "@material-ui/core/Select";
-import useTheme from "@material-ui/core/styles/useTheme";
-import InputLabel from "@material-ui/core/InputLabel";
 import AddIcon from '@material-ui/icons/Add';
 import { useStyles } from "../../../utils/useStyles";
-
-const ITEM_HEIGHT = 48;
-const ITEM_PADDING_TOP = 8;
-const MenuProps = {
-    PaperProps: {
-        style: {
-            maxHeight: ITEM_HEIGHT * 4.5 + ITEM_PADDING_TOP,
-            width: 250,
-        },
-    },
-};
-
-function getStyles(name, groupName, theme) {
-    return {
-        fontWeight:
-            groupName.indexOf(name) === -1
-                ? theme.typography.fontWeightRegular
-                : theme.typography.fontWeightMedium,
-    };
-}
 
 export default function AddChild() {
     const classes = useStyles();
