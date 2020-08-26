@@ -29,13 +29,6 @@ const MenuProps = {
     },
 };
 
-const groups = [
-    'Giraffen',
-    'Mäuse',
-    'Bären',
-    'Elefanten'
-]
-
 function getStyles(name, groupName, theme) {
     return {
         fontWeight:
@@ -47,17 +40,11 @@ function getStyles(name, groupName, theme) {
 
 export default function AddChild() {
     const classes = useStyles();
-    const theme = useTheme();
 
     const [selectedDate, setSelectedDate] = useState(new Date('2014-08-18T21:11:54'));
-    const [groupName, setGroupName] = useState(['Giraffen']);
 
     const handleDateChange = (date) => {
         setSelectedDate(date);
-    };
-
-    const handleChange = (event) => {
-        setGroupName(event.target.value);
     };
 
     return (
@@ -81,6 +68,7 @@ export default function AddChild() {
                                 <KeyboardDatePicker
                                     disableToolbar
                                     required
+                                    fullWidth
                                     variant="inline"
                                     format="MM/dd/yyyy"
                                     margin="normal"
@@ -94,22 +82,6 @@ export default function AddChild() {
                                 />
                             </Grid>
                         </MuiPickersUtilsProvider>
-                        <FormControl required className={classes.formControl}>
-                            <InputLabel id="demo-simple-select-required-label">Gruppe</InputLabel>
-                            <Select
-                                labelId="demo-simple-select-required-label"
-                                id="demo-simple-select-required"
-                                value={groupName}
-                                onChange={handleChange}
-                                className={classes.selectEmpty}
-                            >
-                                {groups.map((group) => (
-                                    <MenuItem key={group} value={group} style={getStyles(group, groupName, theme)}>
-                                        {group}
-                                    </MenuItem>
-                                ))}
-                            </Select>
-                        </FormControl>
                     </div>
                     <TextField id="standard-full-width" label="Erziehungsberechtigte/-r" fullWidth required/>
 
