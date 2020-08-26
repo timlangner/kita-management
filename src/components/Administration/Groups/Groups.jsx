@@ -16,6 +16,7 @@ import TextField from "@material-ui/core/TextField";
 import EditIcon from '@material-ui/icons/Edit';
 import { useStyles } from "../../../utils/useStyles";
 import AddGroup from "./AddGroup";
+import AddChild from "../AddChild/AddChild";
 
 
 function generate(element) {
@@ -26,15 +27,14 @@ function generate(element) {
     );
 }
 
+const groups = ['Bären', 'Elefanten', 'Giraffen', 'Mäuse'];
+
 export default function Groups() {
     const classes = useStyles();
     const [dense, setDense] = useState(false);
 
     return (
         <div>
-            <Typography style={{ marginTop: '20px' }} variant={'h6'} gutterBottom>
-                Gruppen
-            </Typography>
             <AddGroup />
             <Accordion>
                 <AccordionSummary
@@ -47,12 +47,10 @@ export default function Groups() {
                 <AccordionDetails>
                     <Grid item xs={12} md={6}>
                         <div className={classes.demo}>
+                            <AddChild />
                             <List dense={dense}>
                                 {generate(
                                     <ListItem>
-                                        <ListItemAvatar>
-                                            <Avatar src="https://material-ui.com/static/images/avatar/1.jpg"/>
-                                        </ListItemAvatar>
                                         <ListItemText
                                             primary="Max Mustermann"
                                             secondary="Aug 4, 2016"
