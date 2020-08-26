@@ -7,9 +7,6 @@ export default function Administration() {
 
     return (
         <div style={{ margin: '15px' }}>
-            <div>
-                <AddChild />
-            </div>
             <Groups />
         </div>
     )
