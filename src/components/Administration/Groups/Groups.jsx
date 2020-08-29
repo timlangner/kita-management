@@ -12,9 +12,7 @@ import ListItemSecondaryAction from "@material-ui/core/ListItemSecondaryAction";
 import IconButton from "@material-ui/core/IconButton";
 import EditIcon from '@material-ui/icons/Edit';
 import { useStyles } from "../../../utils/useStyles";
-import AddGroup from "./AddGroup";
 import AddChild from "../AddChild/AddChild";
-
 
 function generate(element) {
     return [0, 1, 2, 3].map((value) =>
@@ -28,13 +26,20 @@ const groups = ['Bären', 'Elefanten', 'Giraffen', 'Mäuse'];
 
 export default function Groups() {
     const classes = useStyles();
+    const [expanded, setExpanded] = useState(false);
+
+    const handleChangeAccordion = (panel) => (event, isExpanded) => {
+        setExpanded(isExpanded ? panel : false);
+    };
 
     return (
         <div>
-            <AddGroup />
             {groups.map(group => {
                 return (
-                    <Accordion>
+                    <Accordion
+                        expanded={expanded === group}
+                        onChange={handleChangeAccordion(group)}
+                    >
                         <AccordionSummary
                             expandIcon={<ExpandMoreIcon />}
                             aria-controls="panel1a-content"
