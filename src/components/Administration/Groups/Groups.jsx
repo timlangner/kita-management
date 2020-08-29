@@ -13,6 +13,8 @@ import IconButton from "@material-ui/core/IconButton";
 import EditIcon from '@material-ui/icons/Edit';
 import { useStyles } from "../../../utils/useStyles";
 import AddChild from "../AddChild/AddChild";
+import Avatar from "@material-ui/core/Avatar";
+import ListItemAvatar from "@material-ui/core/ListItemAvatar";
 
 function generate(element) {
     return [0, 1, 2, 3].map((value) =>
@@ -54,6 +56,9 @@ export default function Groups() {
                                     <List>
                                         {generate(
                                             <ListItem>
+                                                <ListItemAvatar>
+                                                    <Avatar src="https://material-ui.com/static/images/avatar/1.jpg"/>
+                                                </ListItemAvatar>
                                                 <ListItemText
                                                     primary="Max Mustermann"
                                                     secondary="Aug 4, 2016"
