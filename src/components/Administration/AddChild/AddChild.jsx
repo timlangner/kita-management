@@ -31,7 +31,7 @@ export default function AddChild() {
                 <Typography className={classes.heading}>Hinzufügen</Typography>
             </AccordionSummary>
             <AccordionDetails>
-                <form noValidate autoComplete="off">
+                <form onSubmit={handleSubmit} noValidate autoComplete="off">
                     <div style={{ display: 'flex' }}>
                         <TextField style={{ marginRight: '20px' }} id="standard-basic" label="Vorname" required />
                         <TextField id="standard-basic" label="Nachname" required/>
@@ -60,7 +60,7 @@ export default function AddChild() {
                     <TextField id="standard-full-width" label="Erziehungsberechtigte/-r" fullWidth required/>
 
                     <div style={{ textAlign: 'center'}}>
-                        <Button style={{ marginTop: '20px' }} variant="contained" color="primary">
+                        <Button style={{ marginTop: '20px' }} type="submit" variant="contained" color="primary">
                             Speichern
                         </Button>
                     </div>
