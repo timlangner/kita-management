@@ -21,6 +21,10 @@ export default function AddChild() {
         setSelectedDate(date);
     };
 
+    const handleSubmit = () => {
+        console.log('submitted');
+    }
+
     return (
         <Accordion>
             <AccordionSummary
