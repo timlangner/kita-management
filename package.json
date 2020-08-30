@@ -1,27 +1,28 @@
 {
-  "name": "kita-management",
-  "version": "0.1.0",
-  "private": true,
+  "name": "alibi_web",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/index.jsx",
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "start": "webpack-dev-server --hot --env.environment=development --https",
+    "build": "webpack -p --env.environment=production",
+    "build:staging": "webpack -p --env.environment=staging"
   },
-  "eslintConfig": {
-    "extends": "react-app"
+  "browserslist": [
+    "> 0.5%",
+    "last 3 versions",
+    "Firefox ESR",
+    "not dead"
+  ],
+  "prettier": {
+    "tabWidth": 4,
+    "singleQuote": true
   },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
+  "stylelint": {
+    "extends": "stylelint-config-sass-guidelines",
+    "rules": {
+      "indentation": 4
+    }
   },
   "devDependencies": {
     "@babel/core": "^7.8.7",
